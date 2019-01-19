@@ -1,23 +1,23 @@
 package com.github.Glenn.schedulebot;
 
 import org.javacord.api.DiscordApi;
+/*
+ * I'm assuming this class doesn't need to have instances.
+ * If we do we'll have to remove all the static stuff.
+ */
+public class ListenerCreator {
 
-public class ListenerManager {
-	
-	private DiscordApi api;
-	
-	public ListenerManager(DiscordApi api)
+	public static final void initializeFromAPI(DiscordApi api)
 	{
-		this.api = api;
-		createPingPong();
+		createListeners(api);
 	}
 	
-	private void createListeners()
+	private static void createListeners(DiscordApi api)
 	{
-		createPingPong();
+		createPingPong(api);
 	}
 	
-	private void createPingPong()
+	private static void createPingPong(DiscordApi api)
 	{
 		// Add a listener which answers with "Pong!" if someone writes "!ping"
         api.addMessageCreateListener(event -> {

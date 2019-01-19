@@ -16,7 +16,8 @@ public class DiscordConnector {
 		DiscordApi api = new DiscordApiBuilder().setToken(getToken()).login().join();
 		System.out.println("Logged In!");
 		System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
-		ListenerManager listenManager = new ListenerManager(api);
+		//ListenerManager listenManager = new ListenerManager(api);
+		ListenerCreator.initializeFromAPI(api);
 	}
 	
 	private String getToken()
