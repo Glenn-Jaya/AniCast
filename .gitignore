@@ -3,3 +3,4 @@ DiscordToken.txt
 .settings
 .project
 target
+client_secret.json
