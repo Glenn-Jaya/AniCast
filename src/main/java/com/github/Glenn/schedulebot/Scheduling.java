@@ -60,8 +60,8 @@ public class Scheduling {
 			System.out.println("IMAGE LINK?: " + currRecord.getLocation());
 			
 			// TODO BELOW COMMENT OUT IS FOR EMBED I THINK JUST PRINT FOR NOW
-			//cDiscord.displayAnnouncement(currRecord.getTitle(), currRecord.getLocation(), currRecord.getDescription());
-			System.out.println("description: " + currRecord.getDescription());
+			cDiscord.displayAnnouncement(currRecord.getTitle(), currRecord.getLocation(), currRecord.getDescription());
+			//System.out.println("description: " + currRecord.getDescription());
 			
 		}
 

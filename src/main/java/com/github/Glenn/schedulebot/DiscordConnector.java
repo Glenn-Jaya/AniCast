@@ -9,7 +9,14 @@ import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
 
+
 public class DiscordConnector {
+	
+	private Display display;
+	private ListenerCreator listenerCreator;
+	private ChannelWizard channelWizard;
+	
+	
 	
 	public DiscordConnector()
 	{
@@ -17,6 +24,8 @@ public class DiscordConnector {
 		System.out.println("Logged In!");
 		System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
 		//ListenerManager listenManager = new ListenerManager(api);
+		channelWizard = new ChannelWizard();
+		listenerCreator = new ListenerCreator(channelWizard);
 		ListenerCreator.initializeFromAPI(api);
 	}
 	
@@ -35,5 +44,9 @@ public class DiscordConnector {
 			e.printStackTrace();
 		}
 		return token;
+	}
+
+	public void displayAnnouncement(String title, String image, String description) {
+		display.outputDisplay(title, image, description);
 	}
 }
